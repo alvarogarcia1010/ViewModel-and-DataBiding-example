@@ -27,67 +27,36 @@ class MainActivity : AppCompatActivity() {
 
     }
     fun addOneTeamA(v: View) {
-        displayScore(
-            tv_score_team_a,
-            ++scoreViewModel.scoreTeamA
-        )
+        scoreViewModel.scoreTeamA.value = scoreViewModel.scoreTeamA.value?.plus(1)
     }
 
     fun addOneTeamB(v: View) {
-        displayScore(
-            tv_score_team_b,
-            ++scoreViewModel.scoreTeamB
-        )
+        scoreViewModel.scoreTeamB.value = scoreViewModel.scoreTeamB.value?.plus(1)
+
     }
 
     fun addTwoTeamA(v: View) {
-        scoreViewModel.scoreTeamA += 2
-        displayScore(
-            tv_score_team_a,
-            scoreViewModel.scoreTeamA
-        )
+        scoreViewModel.scoreTeamA.value = scoreViewModel.scoreTeamA.value?.plus(2)
     }
 
     fun addTwoTeamB(v: View) {
-        scoreViewModel.scoreTeamB += 2
-        displayScore(
-            tv_score_team_b,
-            scoreViewModel.scoreTeamB
-        )
+        scoreViewModel.scoreTeamB.value = scoreViewModel.scoreTeamB.value?.plus(2)
+
     }
 
     fun addThreeTeamA(v: View) {
-        scoreViewModel.scoreTeamA += 3
-        displayScore(
-            tv_score_team_a,
-            scoreViewModel.scoreTeamA
-        )
+        scoreViewModel.scoreTeamA.value = scoreViewModel.scoreTeamA.value?.plus(3)
     }
 
     fun addThreeTeamB(v: View) {
-        scoreViewModel.scoreTeamB += 3
-        displayScore(
-            tv_score_team_b,
-            scoreViewModel.scoreTeamB
-        )
+        scoreViewModel.scoreTeamB.value = scoreViewModel.scoreTeamB.value?.plus(3)
+
     }
 
     fun resetScores(v: View) {
-        scoreViewModel.scoreTeamA = 0
-        scoreViewModel.scoreTeamB = 0
+        scoreViewModel.scoreTeamA.value = 0
+        scoreViewModel.scoreTeamB.value = 0
 
-        displayScore(
-            tv_score_team_a,
-            scoreViewModel.scoreTeamA
-        )
-
-        displayScore(
-            tv_score_team_b,
-            scoreViewModel.scoreTeamB
-        )
     }
 
-    fun displayScore(v: TextView, score: Int) {
-        v.text = score.toString()
-    }
 }
